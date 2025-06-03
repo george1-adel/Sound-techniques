@@ -1,0 +1,69 @@
+/* filepath: c:\Users\COMPU\OneDrive\Desktop\مشروع اختبارات جديد - Copy\styles.css */
+/* تنسيقات عامة لتطبيق الاختبار */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيق الحاويات */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق العناوين */
+h1, h2 {
+    color: #2c3e50;
+}
+
+/* تنسيق الأزرار */
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* تنسيق صفحة النقاط والمستويات */
+#points-levels {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#points-levels h2 {
+    margin-bottom: 10px;
+}
+
+#points-levels p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* تنسيق التنبيهات */
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.alert.success {
+    background-color: #28a745;
+}
+
+.alert.error {
+    background-color: #dc3545;
+}
