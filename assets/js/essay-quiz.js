@@ -455,9 +455,31 @@ class EssayQuizApp {
     }
 
     startQuiz() {
+        // استخدام المصفوفة المجمعة من الملفات المنفصلة
+        const allQuestions = window.essayQuestions || [];
+
+        // تصفية الأسئلة حسب الفصل
+        let filteredQuestions = allQuestions;
+
+        if (this.state.selectedChapter && this.state.selectedChapter !== 'full') {
+            filteredQuestions = allQuestions.filter(q => q.chapter == this.state.selectedChapter);
+        }
+
+        if (filteredQuestions.length === 0) {
+            alert('لا توجد أسئلة مقالية لهذا الفصل حالياً.');
+            // العودة للصفحة الرئيسية
+            if (window.UI) {
+                window.UI.showPage('chapters-page');
+            }
+            return;
+        }
+
         // Shuffle and select questions
-        const shuffled = [...QUESTIONS_DB].sort(() => 0.5 - Math.random());
-        this.state.quizQuestions = shuffled.slice(0, Math.min(this.state.questionCount, QUESTIONS_DB.length));
+        const shuffled = [...filteredQuestions].sort(() => 0.5 - Math.random());
+        // التأكد من أن عدد الأسئلة لا يتجاوز المتاح
+        const actualCount = Math.min(this.state.questionCount, shuffled.length);
+
+        this.state.quizQuestions = shuffled.slice(0, actualCount);
 
         this.state.gameState = 'quiz';
         this.state.currentQIndex = 0;
