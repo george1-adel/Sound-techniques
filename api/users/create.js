@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 
+// إنشاء Prisma Client مرة واحدة
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
@@ -62,8 +63,11 @@ export default async function handler(req, res) {
         });
     } catch (error) {
         console.error('Database error:', error);
-        return res.status(500).json({ error: 'حدث خطأ في الخادم' });
-    } finally {
-        await prisma.$disconnect();
+        // إرجاع تفاصيل الخطأ للتشخيص
+        return res.status(500).json({
+            error: 'حدث خطأ في الخادم',
+            details: error.message,
+            code: error.code
+        });
     }
 }

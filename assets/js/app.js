@@ -41,7 +41,8 @@ async function submitUsername() {
 
         if (!response.ok) {
             const error = await response.json();
-            throw new Error(error.error || 'حدث خطأ');
+            console.log('Server error details:', error);
+            throw new Error(error.details || error.error || 'حدث خطأ');
         }
 
         const data = await response.json();
