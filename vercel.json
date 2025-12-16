@@ -10,10 +10,6 @@
             "destination": "/api/$1"
         }
     ],
-    "env": {
-        "DATABASE_URL": "@database-url",
-        "GEMINI_API_KEY": "@gemini-api-key"
-    },
     "headers": [
         {
             "source": "/api/(.*)",
