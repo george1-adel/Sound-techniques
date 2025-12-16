@@ -77,6 +77,14 @@ document.addEventListener('DOMContentLoaded', function () {
         Storage.updateDarkModeToggle();
     }
 
+    // ✅ تحقق من وجود مستخدم محفوظ - تخطي صفحة الاسم
+    const savedUsername = Storage.getUsername();
+    if (savedUsername && savedUsername !== 'مستخدم') {
+        console.log('👋 مرحباً مجدداً:', savedUsername);
+        // الانتقال مباشرة لصفحة الفصول
+        UI.showPage('chapters-page');
+    }
+
     // ربط زر الوضع الداكن
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     if (darkModeToggle) {

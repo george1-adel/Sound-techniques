@@ -43,15 +43,21 @@ export default async function handler(req, res) {
             where: { username: cleanUsername }
         });
 
-        // إذا لم يوجد، إنشاء مستخدم جديد
-        if (!user) {
-            user = await prisma.user.create({
-                data: {
-                    username: cleanUsername,
-                    points: 0
-                }
+        // ❌ إذا الاسم موجود، ارجع خطأ
+        if (user) {
+            return res.status(409).json({
+                error: 'اسم المستخدم موجود مسبقاً، اختر اسماً آخر',
+                exists: true
             });
         }
+
+        // ✅ إنشاء مستخدم جديد
+        user = await prisma.user.create({
+            data: {
+                username: cleanUsername,
+                points: 0
+            }
+        });
 
         return res.status(200).json({
             success: true,
