@@ -62,5 +62,9 @@ window.chapter1Questions = [
         correctAnswer: 1
     }
 ];
-    // سيتم إضافة الأسئلة هنا
-];
+
+// دمج أسئلة الفصل الأول مع المصفوفة العامة
+if (typeof window.questions === 'undefined') {
+    window.questions = [];
+}
+window.questions = window.questions.concat(window.chapter1Questions);
