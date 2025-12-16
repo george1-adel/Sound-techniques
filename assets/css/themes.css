@@ -1,0 +1,200 @@
+/* ====================================
+   themes.css - الألوان والثيمات
+   ==================================== */
+
+/* متغيرات CSS للألوان */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #95a5a6;
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+}
+
+/* الوضع الداكن */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e0e0e0;
+}
+
+body.dark-mode .container {
+    background: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #ffd700;
+}
+
+body.dark-mode p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .chapter-card {
+    background: #1e1e30;
+    border-color: #2a2a40;
+}
+
+body.dark-mode .chapter-card:hover {
+    background: #252538;
+    border-color: #667eea;
+}
+
+body.dark-mode .chapter-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .chapter-subtitle {
+    color: #9090a0;
+}
+
+body.dark-mode .answer-option {
+    background: #1e1e30;
+    border-color: #2a2a40;
+    color: #e0e0e0;
+}
+
+body.dark-mode .answer-option:hover {
+    background: #252538;
+    border-color: #667eea;
+}
+
+body.dark-mode .answer-option.selected {
+    background: #667eea;
+    color: #fff;
+}
+
+body.dark-mode #question-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode #progress-bar {
+    background: #2a2a40;
+}
+
+body.dark-mode .modal-content {
+    background: #1e1e30;
+    color: #e0e0e0;
+}
+
+body.dark-mode .question-option {
+    background: #1e1e30;
+    border-color: #2a2a40;
+    color: #e0e0e0;
+}
+
+body.dark-mode .question-option:hover {
+    background: #667eea;
+    color: #fff;
+}
+
+/* زر تبديل الوضع الداكن */
+#dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: scale(1.1) rotate(20deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode #dark-mode-toggle {
+    background: rgba(255, 215, 0, 0.9);
+    color: #1a1a2e;
+}
+
+/* أزرار خاصة */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+}
+
+/* تأثيرات متحركة للخلفية */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: floatParticle 12s linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        top: -20px;
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+body.dark-mode .particle {
+    background: rgba(255, 215, 0, 0.4);
+}

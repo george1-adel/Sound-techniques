@@ -1,0 +1,103 @@
+/* ====================================
+   Quiz Type Selection Styles
+   ==================================== */
+
+.quiz-type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.quiz-type-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 3px solid transparent;
+    text-align: center;
+}
+
+.quiz-type-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.quiz-type-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.quiz-type-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.quiz-type-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Essay Quiz Container */
+#essay-app {
+    display: none;
+}
+
+#essay-app.active {
+    display: block;
+}
+
+/* Hide main container when essay is active */
+body.essay-mode .container {
+    display: none;
+}
+
+body.essay-mode #essay-app {
+    display: block;
+}
+
+/* Dark mode for quiz type */
+body.dark-mode .quiz-type-card {
+    background: #1e1e30;
+    border-color: #2a2a40;
+}
+
+body.dark-mode .quiz-type-card:hover {
+    background: #252538;
+    border-color: #667eea;
+}
+
+body.dark-mode .quiz-type-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .quiz-type-subtitle {
+    color: #9090a0;
+}
+
+@media (max-width: 768px) {
+    .quiz-type-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .quiz-type-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .quiz-type-icon {
+        font-size: 3rem;
+    }
+
+    .quiz-type-title {
+        font-size: 1.3rem;
+    }
+}

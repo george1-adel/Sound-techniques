@@ -1,0 +1,17 @@
+{
+    "name": "quiz-system",
+    "version": "1.0.0",
+    "description": "نظام اختبارات ذكي مع تتبع النقاط",
+    "scripts": {
+        "postinstall": "prisma generate",
+        "dev": "python3 -m http.server 8080",
+        "prisma:generate": "prisma generate",
+        "prisma:migrate": "prisma migrate deploy"
+    },
+    "dependencies": {
+        "@prisma/client": "^5.8.0"
+    },
+    "devDependencies": {
+        "prisma": "^5.8.0"
+    }
+}
