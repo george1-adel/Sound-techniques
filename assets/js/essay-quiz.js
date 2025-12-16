@@ -329,6 +329,9 @@ class EssayQuizApp {
         const totalScore = Object.values(this.state.answers).reduce((acc, curr) => acc + (curr.score || 0), 0);
         const percentage = Math.round((totalScore / (totalQs * 10)) * 100);
 
+        // ✅ تحديث النقاط في قاعدة البيانات
+        this.updateUserPoints(totalScore);
+
         // Score section
         const scoreSection = document.createElement('div');
         scoreSection.style.marginBottom = '2rem';
@@ -507,6 +510,37 @@ class EssayQuizApp {
         // Return to chapters page
         if (window.UI) {
             window.UI.showPage('chapters-page');
+        }
+    }
+
+    // ✅ تحديث نقاط المستخدم في قاعدة البيانات
+    async updateUserPoints(points) {
+        const username = Storage.getUsername();
+
+        if (!username || username === 'مستخدم') {
+            console.log('لا يوجد مستخدم محفوظ');
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/users/update-points', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username,
+                    pointsToAdd: points
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('✅ تم تحديث النقاط:', data.user.points);
+                Storage.set('userPoints', data.user.points);
+            } else {
+                console.error('فشل تحديث النقاط');
+            }
+        } catch (error) {
+            console.error('خطأ في تحديث النقاط:', error);
         }
     }
 
