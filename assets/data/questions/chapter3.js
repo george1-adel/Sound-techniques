@@ -11,7 +11,8 @@ window.chapter3Questions = [
             "ملف فيديو",
             "ملف نصي"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "WAV هو تنسيق صوتي قياسي غير مضغوط (Lossless/Uncompressed) يحتفظ بجميع البيانات الصوتية بجودة عالية، ولكنه ينتج ملفات كبيرة الحجم."
     },
     {
         id: 12,
@@ -23,7 +24,8 @@ window.chapter3Questions = [
             "لا يوجد فرق",
             "كلاهما غير مضغوط"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "FLAC هو تنسيق ضغط بدون فقدان (Lossless) يحافظ على الجودة الكاملة، بينما MP3 هو تنسيق ضغط مع فقدان (Lossy) يضحي ببعض البيانات لتقليل الحجم بشكل كبير."
     },
     {
         id: 13,
@@ -35,7 +37,8 @@ window.chapter3Questions = [
             "تردد الصوت",
             "حجم الملف"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "معدل البت (Bitrate) هو مقياس لكمية البيانات التي تتم معالجتها أو نقلها في الثانية الواحدة (مثل 320 kbps). كلما زاد المعدل، زادت جودة الصوت وحجم الملف."
     },
     {
         id: 14,
@@ -47,7 +50,8 @@ window.chapter3Questions = [
             "AAC أو MP3",
             "AIFF"
         ],
-        correctAnswer: 2
+        correctAnswer: 2,
+        explanation: "صيغ الضغط مثل AAC و MP3 هي الأنسب للبث المباشر عبر الإنترنت لأنها توفر جودة جيدة بحجم بيانات صغير، مما يوفر في استهلاك النطاق الترددي (Bandwidth)."
     },
     {
         id: 15,
@@ -59,7 +63,8 @@ window.chapter3Questions = [
             "Dynamic Audio Writer",
             "Digital Analog Waveform"
         ],
-        correctAnswer: 0
+        correctAnswer: 0,
+        explanation: "DAW (محطة عمل الصوت الرقمي) هو برنامج متكامل يستخدم لتسجيل وتحرير ومزج وإنتاج الملفات الصوتية (مثل Pro Tools, Logic Pro, Audacity)."
     }
 ];
 

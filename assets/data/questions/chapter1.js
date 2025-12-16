@@ -11,7 +11,8 @@ window.chapter1Questions = [
             "جسيمات ضوئية تنتقل بسرعة الضوء",
             "طاقة حرارية تنتقل عبر الهواء"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "الصوت يحتاج إلى وسط مادي (مثل الهواء أو الماء) لينتقل خلاله على شكل اهتزازات، ولا يمكنه الانتقال في الفراغ."
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ window.chapter1Questions = [
             "400 متر/ثانية",
             "500 متر/ثانية"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "سرعة الصوت في الهواء عند درجة حرارة 20 مئوية تبلغ تقريباً 343 متر/ثانية."
     },
     {
         id: 3,
@@ -35,7 +37,8 @@ window.chapter1Questions = [
             "ديسيبل (dB)",
             "أوم (Ω)"
         ],
-        correctAnswer: 2
+        correctAnswer: 2,
+        explanation: "الديسيبل (dB) هو الوحدة المستخدمة لقياس شدة الصوت أو مستوى ضغط الصوت."
     },
     {
         id: 4,
@@ -47,7 +50,8 @@ window.chapter1Questions = [
             "ارتفاع الموجة الصوتية",
             "سرعة انتشار الصوت"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "التردد يُعرف بأنه عدد الذبذبات (أو الاهتزازات) التي يحدثها الجسم المهتز في الثانية الواحدة ويقاس بالهيرتز."
     },
     {
         id: 5,
@@ -59,7 +63,8 @@ window.chapter1Questions = [
             "من 50 Hz إلى 15,000 Hz",
             "من 100 Hz إلى 25,000 Hz"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "الأذن البشرية الطبيعية يمكنها سماع الأصوات التي تتراوح تردداتها بين 20 هيرتز و 20 كيلو هيرتز (20,000 Hz)."
     }
 ];
 

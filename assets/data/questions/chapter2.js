@@ -10,7 +10,8 @@ window.chapter2Questions = [
             "الرقمي أقدم من التناظري",
             "لا يوجد فرق بينهما"
         ],
-        correctAnswer: 0
+        correctAnswer: 0,
+        explanation: "الإشارة التناظرية هي موجة مستمرة تحاكي الصوت الأصلي تماماً، بينما الإشارة الرقمية هي تمثيل متقطع (عينات) للصوت يتم تحويله إلى أرقام (0 و 1)."
     },
     {
         id: 7,
@@ -22,7 +23,8 @@ window.chapter2Questions = [
             "Advanced Digital Coding",
             "Audio Data Compression"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "ADC هو اختصار لـ Analog to Digital Converter، وهو الجهاز أو الدائرة المسؤولة عن تحويل الإشارة الصوتية التناظرية (كهرباء) إلى بيانات رقمية."
     },
     {
         id: 8,
@@ -34,7 +36,8 @@ window.chapter2Questions = [
             "88,200 Hz",
             "96,000 Hz"
         ],
-        correctAnswer: 1
+        correctAnswer: 1,
+        explanation: "المعدل 44,100 Hz (أو 44.1 kHz) هو المعيار الأكثر شيوعاً للصوت (CD Quality)، لأنه يغطي ضعف المدى السمعي للإنسان (Nyquist Theorem)."
     },
     {
         id: 9,
@@ -46,7 +49,8 @@ window.chapter2Questions = [
             "عدد البتات المستخدمة لتمثيل كل عينة",
             "حجم الملف الصوتي"
         ],
-        correctAnswer: 2
+        correctAnswer: 2,
+        explanation: "عمق البت يحدد الدقة الديناميكية لكل عينة صوتية. كلما زاد الرقم (مثل 16-bit أو 24-bit)، زادت دقة تمثيل سعة الموجة وقلت الضوضاء."
     },
     {
         id: 10,
@@ -58,7 +62,8 @@ window.chapter2Questions = [
             "MP3",
             "Analog Wire"
         ],
-        correctAnswer: 2
+        correctAnswer: 2,
+        explanation: "MP3 هو صيغة ملف رقمي مضغوط، بينما الفينيل ولوكاسيت هي وسائط تخزين تناظرية."
     },
     // سيتم إضافة الأسئلة هنا
 ];
