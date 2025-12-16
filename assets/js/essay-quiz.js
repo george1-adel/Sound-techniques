@@ -412,14 +412,37 @@ class EssayQuizApp {
 
         container.appendChild(reviewSection);
 
+        // Buttons container
+        const buttonsContainer = document.createElement('div');
+        buttonsContainer.style.display = 'flex';
+        buttonsContainer.style.gap = '1rem';
+        buttonsContainer.style.justifyContent = 'center';
+        buttonsContainer.style.marginTop = '2rem';
+        buttonsContainer.style.flexWrap = 'wrap';
+
+        // Leaderboard button
+        const leaderboardBtn = document.createElement('button');
+        leaderboardBtn.className = 'btn btn-warning';
+        leaderboardBtn.textContent = '🏆 المتصدرين';
+        leaderboardBtn.addEventListener('click', () => {
+            // Exit essay mode first
+            document.body.classList.remove('essay-mode');
+            this.appContainer.innerHTML = '';
+            // Show leaderboard
+            if (window.showLeaderboard) {
+                window.showLeaderboard('chapters-page');
+            }
+        });
+
         // Restart button
         const restartBtn = document.createElement('button');
         restartBtn.className = 'btn btn-primary';
-        restartBtn.style.marginTop = '2rem';
         restartBtn.textContent = 'اختبار جديد';
         restartBtn.addEventListener('click', () => this.restart());
 
-        container.appendChild(restartBtn);
+        buttonsContainer.appendChild(leaderboardBtn);
+        buttonsContainer.appendChild(restartBtn);
+        container.appendChild(buttonsContainer);
 
         return container;
     }

@@ -139,3 +139,107 @@ p {
         font-size: 1.3rem;
     }
 }
+
+/* ====================================
+   Leaderboard - لوحة المتصدرين
+   ==================================== */
+
+#leaderboard-page h2 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.leaderboard-table {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.leaderboard-row:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-row.gold {
+    background: linear-gradient(135deg, #fff9e6 0%, #ffe066 100%);
+    border-color: #ffd700;
+}
+
+.leaderboard-row.silver {
+    background: linear-gradient(135deg, #f8f9fa 0%, #c0c0c0 100%);
+    border-color: #c0c0c0;
+}
+
+.leaderboard-row.bronze {
+    background: linear-gradient(135deg, #fff5f0 0%, #cd7f32 30%, #fff5f0 100%);
+    border-color: #cd7f32;
+}
+
+.leaderboard-row.current-user {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+.leaderboard-rank {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.leaderboard-username {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: right;
+}
+
+.leaderboard-points {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #28a745;
+    background: rgba(40, 167, 69, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.leaderboard-loading,
+.leaderboard-empty,
+.leaderboard-error {
+    padding: 2rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.2rem;
+}
+
+.leaderboard-error {
+    color: #dc3545;
+}
+
+@media (max-width: 480px) {
+    .leaderboard-row {
+        grid-template-columns: 50px 1fr 80px;
+        padding: 0.8rem;
+    }
+
+    .leaderboard-username {
+        font-size: 0.95rem;
+    }
+
+    .leaderboard-points {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.5rem;
+    }
+}

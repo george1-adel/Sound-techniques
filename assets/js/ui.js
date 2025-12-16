@@ -197,8 +197,75 @@ function showReviewPage() {
     }
 }
 
+// متغير لحفظ الصفحة السابقة
+let previousPage = 'chapters-page';
+
 function showPointsPage() {
-    window.location.href = 'pages/points.html';
+    showLeaderboard('chapters-page');
+}
+
+// عرض صفحة المتصدرين
+async function showLeaderboard(fromPage = 'chapters-page') {
+    previousPage = fromPage;
+    UI.showPage('leaderboard-page');
+
+    const container = document.getElementById('leaderboard-container');
+    container.innerHTML = '<div class="leaderboard-loading">⏳ جاري التحميل...</div>';
+
+    try {
+        const response = await fetch('/api/users/all');
+        const data = await response.json();
+
+        if (!data.success || !data.users || data.users.length === 0) {
+            container.innerHTML = '<div class="leaderboard-empty">لا يوجد مستخدمين بعد</div>';
+            return;
+        }
+
+        // إنشاء جدول المتصدرين
+        let html = '<div class="leaderboard-table">';
+
+        data.users.forEach((user, index) => {
+            const rank = index + 1;
+            let rankIcon = '';
+            let rankClass = '';
+
+            if (rank === 1) {
+                rankIcon = '🥇';
+                rankClass = 'gold';
+            } else if (rank === 2) {
+                rankIcon = '🥈';
+                rankClass = 'silver';
+            } else if (rank === 3) {
+                rankIcon = '🥉';
+                rankClass = 'bronze';
+            } else {
+                rankIcon = rank;
+                rankClass = '';
+            }
+
+            // تحقق إذا كان المستخدم الحالي
+            const isCurrentUser = user.username === Storage.getUsername();
+
+            html += `
+                <div class="leaderboard-row ${rankClass} ${isCurrentUser ? 'current-user' : ''}">
+                    <div class="leaderboard-rank">${rankIcon}</div>
+                    <div class="leaderboard-username">${user.username}</div>
+                    <div class="leaderboard-points">${user.points} نقطة</div>
+                </div>
+            `;
+        });
+
+        html += '</div>';
+        container.innerHTML = html;
+
+    } catch (error) {
+        console.error('Error fetching leaderboard:', error);
+        container.innerHTML = '<div class="leaderboard-error">❌ فشل تحميل البيانات</div>';
+    }
+}
+
+function goBackFromLeaderboard() {
+    UI.showPage(previousPage);
 }
 
 function startNewExam() {
